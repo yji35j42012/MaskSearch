@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="ie=edge"
+    >
+    <title>口罩資訊查詢</title>
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <section v-if="loading">
+            Loading...
+        </section>
+        <section v-else>
+            <div class="container">
+                <div class="title">
+                    <h1>口罩資訊查詢</h1>
+                </div>
+                <div class="City-search">
+                    <input
+                        type="text"
+                        placeholder="請輸入地點搜尋"
+                        id="search"
+                        v-model.trim="input.search"
+                    >
+                </div>
+                <div
+                    class="inf_card"
+                    id="inf_card"
+                >
+                    <div
+                        class="item"
+                        v-for="item in searchMenu"
+                    >
+                        <div>
+                            <div class="pharmacy">{{item.properties.name}}</div>
+                            <div class="mask_count">口罩數量:成人 - {{item.properties.mask_adult}} 個/ 兒童 -
+                                {{item.properties.mask_child}} 個</div>
+                            <div class="address">地址:{{item.properties.address}}</div>
+                            <div class="phone">電話:{{item.properties.phone}}</div>
+                            <div class="last_update">更新時間:{{item.properties.updated}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/mask.js"></script>
+</body>
+
+</html>
