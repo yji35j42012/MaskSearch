@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;    
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+*:hover,*:focus,*:active{
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+input,
+select,
+button{  
+    padding: 0;
+    border: none;
+    outline:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;   
+}
+.container {
+    position: relative;
+    width: 100%;
+    min-width: 375px;
+    height: 100%;
+    background: url("../images/mask_ph.png")no-repeat bottom/cover fixed,
+                url("../images/bg_ph.png")no-repeat top/cover;
+}
+/* all use */
+.txt_l{text-align: left;}
+.txt_r{text-align: right;}
+.txt_gradient {
+    background-image: -webkit-linear-gradient(45deg, #B9842C 0, #FEFCBE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-weight: 900;
+}
+.txt_shadow{
+    width: 100%;
+}
+.txt_shadow:after {
+    content: attr(data-txt);
+    text-shadow:   4px 4px 0 #000,
+    -3px -3px 0 #000;
+    color: transparent;
+}
+
+
+.header {
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.logo {
+    width: 58px;
+    height: 33px;
+    background: url('../images/logo_ph.png');
+}
+
+.menu_btn {
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    box-shadow: 0px 8px 0px #fff,
+        0px -8px 0px #fff;
+}
+
+.menu_btn:hover~.menu {
+    display: block;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 0 10px;
+}
+.content {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100% - 40px);
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 15px;
+    width: 295px;
+    margin: 0 auto;
+}
+
+.title {
+    position: absolute;
+    width: 240px;
+    bottom: 45%;
+    transform: rotate(-10deg);
+    line-height: 1;
+    font-size: 42px;
+}
+
+.title div+div{
+    margin-top: 10px;
+}
+.cf_logo{
+    width: 100%;
+    height: 74px;
+
+    background: url('../images/cf_logo.png')no-repeat;
+    background-position-x: 90%;
+}
+.game_btn {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.game_item {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    background-image: linear-gradient(90deg, rgba(255,224,186,1) 0%, rgba(213,166,52,1) 50%, rgba(255,224,186,1) 100%);
+    border-radius: 15px;
+    border-left: 3px solid #c28618;
+    border-right: 3px solid #c28618;
+    margin-bottom: 15px;
+    padding: 3px 0;
+    transition-duration: .3s;
+    font-size: 18px;
+
+    font-style: italic;
+}
+.game_item:hover{
+    z-index: 2;
+    transform: scale(1.3, 1.3);
+}
+.game_item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.game_item .txt{
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    background-color: rgba(0,0,0,.8);
+    bottom: 3px;
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius:10px;
+    text-align: center;
+}
+.game_item .txt span{
+    display: block;
+    line-height: 35px;
+    font-weight: 900;
+    
+}
+.game_item .txt span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(129,91,45) 0%,
+                            rgb(242,214,119) 25%,
+                            rgb(254,253,197) 50%,
+                            rgb(242,214,119) 75%,
+                                rgb(129,91,45) 100%);
+}
+
+@media (min-width:896px){
+    .container {
+        background: url('../images/masl_pc.png') no-repeat center/cover fixed,
+                    url('../images/ba2_CF.png') no-repeat center/cover fixed;
+        padding-bottom: 90px;
+    }
+    .title {
+        width: 385px;
+        right: 60%;
+        
+    }
+    .title div{
+        font-size: 70px;
+    }
+    .header{
+        height: 56px;
+        padding: 0;
+        align-items: flex-start;
+    }
+    .logo{
+        width: 258px;
+        height: 99px;
+        background: url('../images/logo_pc.png');
+    }
+    .menu_btn{
+        display: none;
+    }
+    .menu {
+        position: relative;
+        width: calc(100% - 258px);
+        height: 100%;
+        align-items: center;
+        display: flex;
+        top: unset;
+        white-space:nowrap;
+    }
+    .menu li{
+        position: relative;
+        height: 25px;
+        line-height: 25px;
+    }
+    .menu li:before{
+        content:'';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right:calc(100% + 3px);
+        
+    }
+    .menu li.member:before{
+        background: url('../images/member.png')no-repeat center/cover;
+    }
+    .menu li.cold:before{
+        background: url('../images/cold.png')no-repeat center/cover;
+    }
+    .menu li.broadcast:before{
+        background: url('../images/broadcast.png')no-repeat center/cover;
+    }
+    .menu li.full:before{
+        background: url('../images/full.png')no-repeat center/cover;
+    }
+    .menu li.login_out:before{
+        background: url('../images/login_out.png')no-repeat center/cover;
+    }
+    .broadcast{
+        flex: 0 1 450px ;
+        height: 25px;
+        border: 1px solid #fff;
+     }
+     .member,
+     .cold{
+         margin-right: 100px;
+     }
+     .broadcast,
+     .full{
+         margin-right: 50px;
+     }
+    .content {
+        width: 800px;
+        height: calc(100% - 56px);
+    }
+  
+    .game_item {
+        position: relative;
+        width: 180px;
+        height: 217px;
+        z-index: 1;
+        font-size: 32px;
+    }
+    .game_item .txt{
+        height: 50px;
+    }
+    .game_item .txt span{
+        line-height: 50px;
+    }
+
+}
