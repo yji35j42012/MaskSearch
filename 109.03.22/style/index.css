@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;    
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+*:hover,*:focus,*:active{
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg_pc.png')no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    width: 100%;
+    height: 56px;
+    background-color: #000;
+    display: flex;
+    padding-right: 8px;
+}
+
+.logo {
+    width: 259px;
+    height: 101px;
+    background: url('../images/logo_pc.png') no-repeat left;
+}
+
+.menu_btn {
+    display: none;
+}
+
+.menu_btn {
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    box-shadow: 0px 8px 0px #fff,
+        0px -8px 0px #fff;
+}
+
+.menu {
+    position: relative;
+    width: calc(100% - 258px);
+    height: 100%;
+    align-items: center;
+    display: flex;
+    top: unset;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.menu li {
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+}
+
+.menu li:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: calc(100% + 3px);
+
+}
+.menu li.member:before {
+    background: url('../images/member.png')no-repeat center/cover;
+}
+
+.menu li.cold:before {
+    background: url('../images/cold.png')no-repeat center/cover;
+}
+
+.menu li.broadcast:before {
+    background: url('../images/broadcast.png')no-repeat center/cover;
+}
+
+.menu li.full:before {
+    background: url('../images/full.png')no-repeat center/cover;
+}
+
+.menu li.login_out:before {
+    background: url('../images/login_out.png')no-repeat center/cover;
+}
+
+.broadcast {
+    flex: 1 1 450px;
+    height: 25px;
+    border: 1px solid #fff;
+}
+
+.member,
+.cold {
+    margin-right: 100px;
+}
+
+.broadcast,
+.full {
+    margin-right: 50px;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 65px;
+    overflow: hidden;
+}
+
+.title {
+    width: 427px;
+    position: absolute;
+    align-self: flex-start;
+    left: 15%;
+    bottom: 45%;
+    transform: rotate(-10deg);
+    font-size: 41px;
+}
+
+.title h1 span:before {
+    content: '';
+    width:100%;
+    height: 5px;
+    position: absolute;
+    background: rgb(238, 206, 146);
+    /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(238, 206, 146, 1) 0%, rgba(255, 255, 119, 1) 50%, rgba(238, 206, 146, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(238, 206, 146, 1) 0%, rgba(255, 255, 119, 1) 50%, rgba(238, 206, 146, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(238, 206, 146, 1) 0%, rgba(255, 255, 119, 1) 50%, rgba(238, 206, 146, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.title h1 span,
+.game_item .txt span {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.cf_title {
+    width: 100%;
+    height: 74px;
+    background: url('../images/cf_logo.png')no-repeat;
+    background-position-x: 90%;
+    background-size: contain;
+}
+
+.game_list {
+    display: flex;
+    width: 100%;
+    max-width: 790px;
+    height: 270px;
+    justify-content: space-between;
+}
+
+.game_item {
+    position: relative;
+    width: 180px;
+    height: 217px;
+    background-image: linear-gradient(90deg, rgba(255, 224, 186, 1) 0%, rgba(213, 166, 52, 1) 50%, rgba(255, 224, 186, 1) 100%);
+    border-radius: 15px;
+    border-left: 3px solid #c28618;
+    border-right: 3px solid #c28618;
+    padding: 3px 0;
+    transition-duration: .3s;
+    z-index: 1;
+}
+.game_item:hover{
+    transform: scale(1.3);
+    z-index: 2;
+}
+.game_item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.game_item .txt {
+    position: absolute;
+    height: 66px;
+    background-color: rgba(0, 0, 0, .8);
+    bottom: 3px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 32px;
+    line-height: 66px;
+    text-align: center;
+    font-style: italic;
+}
+
+.game_item .txt span {
+    display: block;
+    width: 100%;
+}
+
+.game_item .txt span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(129, 91, 45) 0%,
+            rgb(242, 214, 119) 25%,
+            rgb(254, 253, 197) 50%,
+            rgb(242, 214, 119) 75%,
+            rgb(129, 91, 45) 100%);
+}
+
+.txt_gradient {
+    background-image: -webkit-linear-gradient(45deg, #B9842C 0, #FEFCBE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+}
+
+.txt_shadow {
+    width: 100%;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.txt_shadow:after {
+    content: attr(data-txt);
+    text-shadow: 3px 3px 0 #000,
+        -3px -3px 0 #000;
+    color: transparent;
+}
+
+.txt_r {text-align: right;}
+
+@media (max-width:1000px) {
+    .header {
+        width: 100%;
+        height: 40px;
+        background-color: #000;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 8px;
+    }
+
+    .logo {
+        width: 59px;
+        height: 32px;
+        background: url('../images/logo_ph.png') no-repeat left;
+    }
+
+    .menu_btn {
+        display: block;
+    }
+
+    .menu_btn:hover~.menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background-color: #000;
+        color: #fff;
+        padding: 0 10px;
+        z-index: 1;
+        height: auto;
+        padding-left: 30px;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        background: url('../images/bg_ph.png')no-repeat top/cover;
+    }
+
+    .content {
+        height: calc(100% - 40px);
+        padding-bottom: 15px;
+    }
+
+    .title {
+        width: 270px;
+        font-size: 25px;
+        align-self: center;
+        left: unset;
+        bottom: 40%;
+    }
+
+    .cf_title {
+        height: 38px;
+        background-position-x: 75%;
+    }
+
+    .game_list {
+        width: 292px;
+        height: 291px;
+        flex-wrap: wrap;
+    }
+
+    .game_item {
+        width: 135px;
+        height: 135px;
+        margin-bottom: 15px;
+    }
+
+    .game_item .txt {
+        font-size: 18px;
+        height: 35px;
+        line-height: 35px;
+    }
+}
